@@ -14,6 +14,8 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -51,13 +53,20 @@ public class SendFeedActivity extends AppCompatActivity implements Runnable{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //To enable fullscreen mode -
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_send_feed);
+
+
 
         startSendFeed=(Button)findViewById(R.id.sendFeedStartButton);
         IPAddrEditText=(EditText)findViewById(R.id.IPAddrText);
         PortAddrEditText = (EditText)findViewById(R.id.PortAddrText);
         socketRecvrTextView = (TextView)findViewById(R.id.socketRecvrTextView);
-        gestureTextView = (TextView)findViewById(R.id.gestureText);
+        //gestureTextView = (TextView)findViewById(R.id.gestureText);
 
 
         startSendFeed.setOnClickListener(new View.OnClickListener() {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.sk_vr.videostreamer.MainActivity"
-    android:background="@mipmap/bg">
+    android:gravity="center">
 
     <Button
         android:id="@+id/sendFeedButton"
@@ -14,11 +14,10 @@
         android:background="@color/blue"
         android:textColor="@android:color/background_light"
         android:padding="15dp"
-        android:text="Send Video Feed"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="116dp" />
-    <Button
+        android:text="Start Camera"
+        android:layout_alignParentTop="true"/>
+
+    <!--<Button
         android:enabled="false"
         android:id="@+id/receiveFeedButton"
         android:layout_width="wrap_content"
@@ -29,6 +28,6 @@
         android:padding="15dp"
         android:layout_marginBottom="98dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true" />-->
 
 </RelativeLayout>
