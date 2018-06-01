@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/VideoStreamer.iml" filepath="$PROJECT_DIR$/VideoStreamer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SiLaTra-TCP.iml" filepath="$PROJECT_DIR$/SiLaTra-TCP.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
