@@ -5,31 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="team_silatra.videostreamer.SendFeedActivity">
+
     <LinearLayout
         android:id="@+id/Socket"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="5"
-        android:padding="10sp">
+        android:padding="10sp"
+        android:weightSum="5">
+
         <EditText
             android:id="@+id/IPAddrText"
-            android:text="192.168.2.4"
-            android:hint="IP Address"
-            android:textColor="@android:color/background_light"
-            android:gravity="center_horizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"/>
+            android:layout_weight="3"
+            android:gravity="center_horizontal"
+            android:hint="IP Address"
+            android:text="192.168.2.4"
+            android:textColor="@android:color/background_light" />
+
         <EditText
             android:id="@+id/PortAddrText"
-            android:text="49164"
-            android:hint="Port Number"
-            android:textColor="@android:color/background_light"
-            android:gravity="center_horizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"/>
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:hint="Port Number"
+            android:text="49164"
+            android:textColor="@android:color/background_light" />
     </LinearLayout>
 
     <LinearLayout
@@ -37,9 +40,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Socket"
+        android:alpha="0.7"
         android:orientation="horizontal"
-        android:weightSum="9"
-        android:alpha="0.7">
+        android:weightSum="9">
         <!--<Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,10 +56,10 @@
             android:id="@+id/socketRecvrTextView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="28dp"
+            android:layout_weight="3"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:layout_weight="3"/>
+            android:textSize="28dp" />
         <!--<Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,10 +79,10 @@
 
     <FrameLayout
         android:id="@+id/camPreview"
-        android:layout_below="@id/SendFeedLayout"
-        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></FrameLayout>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SendFeedLayout"
+        android:layout_marginTop="5dp"></FrameLayout>
 
 
     <!--<Button
@@ -96,15 +99,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:padding="10sp">
+
         <Button
             android:id="@+id/sendFeedStartButton"
-            android:text="Send Feed"
-            android:background="@color/blue"
-            android:textColor="@android:color/background_light"
-            android:layout_centerHorizontal="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"/>
+            android:layout_centerHorizontal="true"
+            android:layout_weight="2"
+            android:background="@color/blue"
+            android:text="Send Feed"
+            android:textColor="@android:color/background_light" />
     </LinearLayout>
 
 </RelativeLayout>
