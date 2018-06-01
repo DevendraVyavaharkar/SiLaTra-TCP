@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sk_vr.videostreamer.SendFeedActivity">
+    tools:context="team_silatra.videostreamer.SendFeedActivity">
     <LinearLayout
         android:id="@+id/Socket"
         android:layout_width="match_parent"
@@ -53,7 +53,6 @@
             android:id="@+id/socketRecvrTextView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="** Translated text **"
             android:textSize="28dp"
             android:textAlignment="center"
             android:textColor="@android:color/white"
@@ -64,6 +63,16 @@
             android:layout_weight="1"/>-->
     </LinearLayout>
 
+    <!--<Button
+        android:id="@+id/flashBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flash"
+        android:background="@color/colorPrimary"
+        android:layout_alignBottom="@id/SendFeedLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="10sp"/>-->
 
     <FrameLayout
         android:id="@+id/camPreview"

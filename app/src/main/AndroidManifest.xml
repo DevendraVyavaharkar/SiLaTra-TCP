@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sk_vr.videostreamer">
+    package="team_silatra.videostreamer">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/video_streamer_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity android:name="team_silatra.videostreamer.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,10 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SendFeedActivity"
+        <activity android:name="team_silatra.videostreamer.SendFeedActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".ReceiveFeedActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="team_silatra.videostreamer.ReceiveFeedActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
