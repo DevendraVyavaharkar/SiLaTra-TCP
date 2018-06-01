@@ -7,6 +7,7 @@ import android.graphics.ImageFormat;
 import android.graphics.Rect;
 import android.graphics.YuvImage;
 import android.hardware.Camera;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +32,7 @@ import java.io.OutputStreamWriter;
 import java.net.*;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class SendFeedActivity extends AppCompatActivity implements Runnable{
     Button startSendFeed,toggleFlash;
@@ -45,7 +47,7 @@ public class SendFeedActivity extends AppCompatActivity implements Runnable{
     private CameraPreview mPreview;
     int commonPort,imagePort;
     Socket imgSenderSocket;
-
+    TextToSpeech textToSpeech;
     SharedPreferences sharedPreferences;
 
     @Override
@@ -57,9 +59,14 @@ public class SendFeedActivity extends AppCompatActivity implements Runnable{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_send_feed);
-
-
-
+        textToSpeech=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    textToSpeech.setLanguage(Locale.US);
+                }
+            }
+        });
         startSendFeed=findViewById(R.id.sendFeedStartButton);
         //toggleFlash=(Button)findViewById(R.id.flashBtn);
         IPAddrEditText=findViewById(R.id.IPAddrText);
@@ -147,6 +154,10 @@ public class SendFeedActivity extends AppCompatActivity implements Runnable{
     protected void onStop() {
         super.onStop();
         mCamera.release();
+        if(textToSpeech !=null){
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
 //        try{
 //
 ////            senderSocket.close();
@@ -458,6 +469,11 @@ public class SendFeedActivity extends AppCompatActivity implements Runnable{
                         public void run() {
                             socketRecvrTextView.setText(recvdText);
                             Log.d("VS123","Received: "+recvdText);
+                            //Text-To-Speech part: Where the actual speech comes out.
+                            if(textToSpeech.speak(recvdText, TextToSpeech.QUEUE_FLUSH, null, null) == TextToSpeech.ERROR)
+                            {
+                                Toast.makeText(getApplicationContext(), "TTS did not work.",Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
                 }
