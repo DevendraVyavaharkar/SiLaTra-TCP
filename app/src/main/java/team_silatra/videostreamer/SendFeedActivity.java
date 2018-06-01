@@ -7,6 +7,8 @@ import android.graphics.ImageFormat;
 import android.graphics.Rect;
 import android.graphics.YuvImage;
 import android.hardware.Camera;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,13 +49,16 @@ public class SendFeedActivity extends AppCompatActivity implements Runnable{
     private CameraPreview mPreview;
     int commonPort,imagePort;
     Socket imgSenderSocket;
+    NetworkInfo mWifi;
     TextToSpeech textToSpeech;
     SharedPreferences sharedPreferences;
+    boolean NetworkConnected;
+    Thread NetworkCheckerThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        NetworkChangeReciever ncr = new NetworkChangeReciever(this);
+        networkChecker();
         //To enable fullscreen mode -
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -158,6 +163,7 @@ public class SendFeedActivity extends AppCompatActivity implements Runnable{
             textToSpeech.stop();
             textToSpeech.shutdown();
         }
+        NetworkCheckerThread.stop();
 //        try{
 //
 ////            senderSocket.close();
@@ -195,6 +201,49 @@ public class SendFeedActivity extends AppCompatActivity implements Runnable{
 
     }
 
+    private void networkChecker() {
+        ConnectivityManager connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkConnected = true;
+        NetworkCheckerThread = new Thread() {
+            public void run() {
+                int i = 0;
+                while (true) {
+                    ConnectivityManager connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                    mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+                    try {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (mWifi.isConnected()) {
+                                    if(!NetworkConnected)
+                                    {
+                                        NetworkConnected = true;
+                                        startSendFeed.setEnabled(true);
+                                        Toast.makeText(getApplicationContext(), "WIFI connected", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                }
+                                else
+                                {
+                                    if(NetworkConnected)
+                                    {
+                                        NetworkConnected = false;
+                                        startSendFeed.setEnabled(false);
+                                        Toast.makeText(getApplicationContext(), "WIFI not connected", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            }
+                        });
+                        Thread.sleep(300);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        NetworkCheckerThread.start();
+    }
 
     /**
      * This thread is used for sending dates over socket
