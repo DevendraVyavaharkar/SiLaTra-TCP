@@ -220,7 +220,7 @@ public class SendFeedActivity extends AppCompatActivity implements Runnable{
                                     {
                                         NetworkConnected = true;
                                         startSendFeed.setEnabled(true);
-                                        Toast.makeText(getApplicationContext(), "WIFI connected", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Wi-Fi connected", Toast.LENGTH_SHORT).show();
                                     }
 
                                 }
@@ -230,25 +230,7 @@ public class SendFeedActivity extends AppCompatActivity implements Runnable{
                                     {
                                         NetworkConnected = false;
                                         startSendFeed.setEnabled(false);
-                                        Toast.makeText(getApplicationContext(), "WIFI not connected", Toast.LENGTH_SHORT).show();
-                                        IPAddrEditText.setEnabled(true);
-                                        PortAddrEditText.setEnabled(true);
-                                        Log.d("VS123","Sender Thread - detected click");
-                                        try{
-                                            mCamera.setPreviewCallback(null);
-                                            Log.d("VS123","iuhiuguygi");
-                                            imgWriter.imgOutput.writeInt(0);
-                                            imgWriter.join();
-                                            imgWriter.signReader.join();
-                                            imgSenderSocket.close();
-                                        }
-                                        catch(IOException e){
-                                            Log.d("VS123","Sender Thread - IOException from onStop() in SendFeed"+e.toString());
-                                        } catch (InterruptedException e) {
-                                            e.printStackTrace();
-                                        }
-                                        startSendFeed.setBackgroundColor(Color.BLUE);
-                                        startSendFeed.setText("Start Feed");
+                                        Toast.makeText(getApplicationContext(), "Wi-Fi not connected", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             }
