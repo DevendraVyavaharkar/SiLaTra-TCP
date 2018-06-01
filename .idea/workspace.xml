@@ -49,8 +49,8 @@
       <file leaf-file-name="SendFeedActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/team_silatra/videostreamer/SendFeedActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="231" column="72" lean-forward="true" selection-start-line="231" selection-start-column="72" selection-end-line="231" selection-end-column="72" />
+            <state relative-caret-position="138">
+              <caret line="203" column="35" lean-forward="true" selection-start-line="203" selection-start-column="35" selection-end-line="203" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#onCreate#0;class#SendFeedActivity#0" expanded="false" />
@@ -61,14 +61,14 @@
                 <element signature="e#4917#4918#0" expanded="true" />
                 <element signature="method#onStop#0;class#SendFeedActivity#0" expanded="false" />
                 <element signature="method#initializeSendFeedActivity#0;class#SendFeedActivity#0" expanded="false" />
-                <element signature="e#7153#10190#0" expanded="true" />
-                <element signature="e#10189#10190#0" expanded="true" />
+                <element signature="e#7153#8900#0" expanded="true" />
+                <element signature="e#8899#8900#0" expanded="true" />
                 <element signature="method#run#0;class#SendFeedActivity#0" expanded="false" />
                 <element signature="method#getCameraInstance#0;class#SendFeedActivity#0" expanded="false" />
                 <element signature="class#ImgWriter#0;class#SendFeedActivity#0" expanded="false" />
                 <element signature="class#SignReader#0;class#SendFeedActivity#0" expanded="false" />
-                <element signature="e#20822#21487#0" expanded="true" />
-                <element signature="e#21486#21487#0" expanded="true" />
+                <element signature="e#19532#20197#0" expanded="true" />
+                <element signature="e#20196#20197#0" expanded="true" />
                 <element signature="class#CameraPreview#0" expanded="false" />
               </folding>
             </state>
@@ -2185,7 +2185,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1527848964422" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1527896929192" />
     <property name="last_opened_file_path" value="F:/OneDrive/Documents/Academics/Sem 6/Experiments/MCAN/Wifi RSSI measurer Exp 5/WifiSignalStrength_1411107.apk" />
   </component>
   <component name="RecentsManager">
@@ -2436,7 +2436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527846966406</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Patch for network loss when the button is already pressed.">
+      <created>1527849004748</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1527849004748</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2550,7 +2557,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Text-To-Speech added. UI not yet added." />
     <MESSAGE value="Wifi connectivity check added. Not tested yet.&#10;Only button disabled as of now." />
-    <option name="LAST_COMMIT_MESSAGE" value="Wifi connectivity check added. Not tested yet.&#10;Only button disabled as of now." />
+    <MESSAGE value="Patch for network loss when the button is already pressed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Patch for network loss when the button is already pressed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2655,7 +2663,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#715#733#0" expanded="true" />
+            <element signature="e#715#733#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2785,7 +2793,7 @@
         <state relative-caret-position="374">
           <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
           <folding>
-            <element signature="e#715#733#0" expanded="true" />
+            <element signature="e#715#733#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2795,8 +2803,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/team_silatra/videostreamer/SendFeedActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="231" column="72" lean-forward="true" selection-start-line="231" selection-start-column="72" selection-end-line="231" selection-end-column="72" />
+        <state relative-caret-position="138">
+          <caret line="203" column="35" lean-forward="true" selection-start-line="203" selection-start-column="35" selection-end-line="203" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#SendFeedActivity#0" expanded="false" />
@@ -2807,14 +2815,14 @@
             <element signature="e#4917#4918#0" expanded="true" />
             <element signature="method#onStop#0;class#SendFeedActivity#0" expanded="false" />
             <element signature="method#initializeSendFeedActivity#0;class#SendFeedActivity#0" expanded="false" />
-            <element signature="e#7153#10190#0" expanded="true" />
-            <element signature="e#10189#10190#0" expanded="true" />
+            <element signature="e#7153#8900#0" expanded="true" />
+            <element signature="e#8899#8900#0" expanded="true" />
             <element signature="method#run#0;class#SendFeedActivity#0" expanded="false" />
             <element signature="method#getCameraInstance#0;class#SendFeedActivity#0" expanded="false" />
             <element signature="class#ImgWriter#0;class#SendFeedActivity#0" expanded="false" />
             <element signature="class#SignReader#0;class#SendFeedActivity#0" expanded="false" />
-            <element signature="e#20822#21487#0" expanded="true" />
-            <element signature="e#21486#21487#0" expanded="true" />
+            <element signature="e#19532#20197#0" expanded="true" />
+            <element signature="e#20196#20197#0" expanded="true" />
             <element signature="class#CameraPreview#0" expanded="false" />
           </folding>
         </state>
